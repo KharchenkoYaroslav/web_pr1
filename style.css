@@ -101,7 +101,6 @@ button:active {
 }
 
 input {
-    width: 50px;
     font-weight: normal;
     border-radius: 5px;
     height: 20px;
@@ -113,8 +112,13 @@ input:focus {
     outline: 2px solid var(--border-secondary-color);
 }
 
-div.mg-kg input,
-div.mj-kg input {
+.percent input {
+    width: 55px;
+}
+.mg-kg input{
+    width: 82px;
+}
+.mj-kg input {
     width: 100px;
 }
 
@@ -128,47 +132,41 @@ div.mj-kg input {
     font-weight: 500;
 }
 
-.percent,
-.mg-kg,
-.mj-kg {
-    padding: 5px;
-}
-
-div[data-value] {
+span[data-value] {
     position: relative;
     font-weight: normal;
     font-weight: 500;
 }
 
-div[data-value]:after {
+span[data-value]:after {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
     font-size: 13.7px;
-    top: 11px;
+    top: 0.5px;
     pointer-events: none;
     color: var(--text-secondary-color);
 }
 
-div.percent[data-value]:after {
+.percent[data-value]:after {
     content: attr(data-value) "%";
-    left: calc(100% - 57.7px);
+    left: 5px;
 }
 
-div.mg-kg[data-value]:after {
+.mg-kg[data-value]:after {
     content: attr(data-value) " мг/кг";
-    left: calc(100% - 107.7px);
+    left: 5px;
 }
 
-div.mj-kg[data-value]:after {
+.mj-kg[data-value]:after {
     content: attr(data-value) " МДж/кг";
-    left: calc(100% - 107.7px);
+    left: 5px;
 }
 
-div[data-value][data-value=""]:after {
+span[data-value][data-value=""]:after {
     content: "";
 }
 
-div[data-value] input {
+span[data-value] input {
     color: transparent;
 }
 
