@@ -31,15 +31,16 @@ numberInputs.forEach(input => {
 
         input.value = value;  
         input.parentElement.setAttribute('data-value', value);
-        
+    });
+    input.addEventListener('blur', function () {
+        const value = input.value;
         const min = input.min ? parseInt(input.min, 10) : -Infinity;
         const max = input.max ? parseInt(input.max, 10) : Infinity;
 
         if (parseInt(value, 10) < min) {
             input.value = min;
             input.parentElement.setAttribute('data-value', min);
-        }
-        else if (parseInt(value, 10) > max) {
+        } else if (parseInt(value, 10) > max) {
             input.value = max;
             input.parentElement.setAttribute('data-value', max);
         }
